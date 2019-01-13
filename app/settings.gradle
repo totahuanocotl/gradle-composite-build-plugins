@@ -1,4 +1,0 @@
-rootProject.name = 'app'
-
-includeBuild ('../library')
-includeBuild ('../plugin')

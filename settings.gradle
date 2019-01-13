@@ -1,0 +1,27 @@
+// Work around current Gradle limitations
+pluginManagement {
+    // Artificially wire dependency resolution for plugins
+    // A single maven or ivy plugin repository is required
+    repositories {
+        ivy { url = uri("build/tmp/fake-plugin-repository") }
+    }
+    // Map plugin request to main plugin artifact
+    // Required since composite builds dependency resolution does not support
+    // custom publications, by which plugin marker artifacts would be available
+    resolutionStrategy {
+        eachPlugin {
+            println requested.id.id
+            if(requested.id.id == "greeting-plugin") {
+                println 'Use module directly instead of published plugin'
+                useModule("mx.com.totahuanocotl.compositebuild:plugin:1.0")
+            }
+        }
+    }
+}
+
+rootProject.name = 'composite-build'
+include 'submodule'
+include 'submodule:app'
+
+includeBuild ('library')
+includeBuild ('submodule/plugin')

@@ -1,0 +1,1 @@
+I took the `settings.gradle` contents from https://github.com/eskatos/composite-gradle-plugins-build.

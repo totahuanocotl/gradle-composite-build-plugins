@@ -21,6 +21,6 @@ group 'mx.com.totahuanocotl.compositebuild'
 version '1.0-SNAPSHOT'
 
 greeting {
-    greeting = "Hi"
-    recipient = "Isaac"
+    greeting.set("Hi")
+    recipient.set("Isaac")
 }

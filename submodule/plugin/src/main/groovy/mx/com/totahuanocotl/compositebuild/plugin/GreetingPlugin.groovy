@@ -7,8 +7,8 @@ class GreetingPlugin implements Plugin<Project> {
     void apply(Project project) {
         def extension = project.extensions.create('greeting', GreetingExtension, project)
         project.tasks.create('greet', Greeting) { task ->
-                task.greeting = extension.greeting
-                task.recipient = extension.recipient
+                task.greeting.set(extension.greeting)
+                task.recipient.set(extension.recipient)
         }
     }
 }

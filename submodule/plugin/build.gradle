@@ -20,10 +20,6 @@ gradlePlugin {
 }
 
 dependencies {
-    implementation gradleApi()
-    implementation localGroovy()
-
-    testImplementation gradleTestKit()
     testImplementation 'org.spockframework:spock-core:1.2-groovy-2.4'
 }
 

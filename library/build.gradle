@@ -1,0 +1,16 @@
+group 'mx.com.totahuanocotl.compositebuild'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:2.4.16'
+
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.4'
+}

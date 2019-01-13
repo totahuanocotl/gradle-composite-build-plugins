@@ -1,0 +1,37 @@
+plugins{
+    id 'groovy'
+    id 'idea'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+gradlePlugin {
+    plugins {
+        greetingPlugin {
+            id = 'greeting-plugin'
+            implementationClass = 'mx.com.totahuanocotl.compositebuild.plugin.GreetingPlugin'
+        }
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+
+    testImplementation gradleTestKit()
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.4'
+}
+
+
+group 'mx.com.totahuanocotl.compositebuild'
+version '1.0-SNAPSHOT'
+
+//greeting {
+//    greeting = 'Hi'
+//    recipient = 'Isaac'
+//}
